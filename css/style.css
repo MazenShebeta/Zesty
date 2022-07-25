@@ -1,0 +1,97 @@
+body{
+    background-color: #f5f5f6;
+}
+nav{
+    opacity: 95%;
+}
+nav button{
+    border: none;
+    margin : 8px 5px 0 0;
+    background-color: #f8f9fa;
+}
+
+
+
+
+.active{
+    text-decoration: underline;   
+}
+
+.startSection{
+    display: flex;
+    width: 100%;
+    height: 50em;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#main-lemon{
+    height: 25em;
+    margin: auto 0 auto 3em;
+}
+
+.startQuote{
+    margin: 8% auto 0 auto;
+}
+
+.startQuote h2{
+    font-size: 3em;
+}
+
+.title{
+    margin-top:3em;
+    width: 100%;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h2{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+
+#cartDiv{
+    z-index: 1;
+    width:25%;
+    height:70%;
+    background-color: white;
+    border: 2px;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 2%;
+    /* position:absolute; */
+    left:75%;
+    z-index:100;
+    overflow-y: auto;
+    display:none;
+    position: fixed;
+
+}
+
+
+.cartItemImg{
+    width: 120px;
+    height: 120px;
+    border-radius: 5%;
+}
+
+
+.items-list > li{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cartPrice{
+    display: block;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+}
