@@ -21,6 +21,21 @@ function addToCart(name, value, src) {
     // var cart = document.getElementById("cartDiv");
     var cartList = document.getElementById("items-list");
     var item = document.createElement("li");
+    var dataDiv = document.createElement("div");
+    var insideDiv = document.createElement("div");
+    var quantityPrice = document.createElement("div");
+
+    item.style.display = "flex";
+    item.style.flexDirection = "row";
+
+    insideDiv.style.display = "flex";
+    insideDiv.style.flexDirection = "column";
+
+    quantityPrice.style.display = "flex";
+    quantityPrice.style.flexDirection = "row";
+
+    dataDiv.style.display = "flex";
+    dataDiv.style.flexDirection = "row";
 
     item.className = "item";
     
@@ -39,8 +54,7 @@ function addToCart(name, value, src) {
     quantity.style.width = "75px";
     quantity.style.textAlign = "right";
     quantity.className = "quantity";
-
-    kg = document.createElement("span")
+    kg = document.createElement("span");
     kg.innerHTML = "kg";
 
     var price = document.createElement("span");
@@ -50,20 +64,25 @@ function addToCart(name, value, src) {
     var remove = document.createElement("button");
     remove.innerHTML = '<i class="fa-solid fa-trash"></i>';
     remove.className = "removeButton";
+    remove.style.alignSelf = "center";
     remove.onclick = function(event){
         var target = event.target;
-        var parent = target.parentNode.parentNode;
+        var parent = target.parentNode.parentNode.parentNode;
         parent.remove();
         totalPrice();
     }
     item.appendChild(img);
-    item.appendChild(title);
-    item.appendChild(quantity);
-    item.appendChild(kg);
-    item.appendChild(price);
-    item.appendChild(remove);
+    insideDiv.appendChild(title);
+    quantityPrice.appendChild(quantity);
+    quantityPrice.appendChild(kg);
+    insideDiv.appendChild(quantityPrice);
+    insideDiv.appendChild(price);
+    dataDiv.appendChild(insideDiv);
+    dataDiv.appendChild(remove);
+    item.appendChild(dataDiv);
     cartList.appendChild(item);
-    updatePrice(title.innerHTML); //update price based on quantity
+    item.style.flexDirection = "row";
+    updatePrice(title.innerHTML);//update price based on quantity
     totalPrice();//update total price
 }
 
@@ -73,7 +92,7 @@ function updatePrice(title){
     for(var i = 0; i < quantities.length; i++){
         quantities[i].addEventListener("change", function(event){
             var target = event.target;
-            var parent = target.parentNode;
+            var parent = target.parentNode.parentNode.parentNode;
             var quantity = this.value;
             var price = parent.getElementsByClassName("cartPrice")[0];
             var priceName = title + "Price";
@@ -90,12 +109,11 @@ function updatePrice(title){
 //button for opening and closing cart
 function ShowCart() {
     var cart = document.getElementById("cartDiv");
-    if(cart.style.display == "block"){
+    if(cart.style.display == "flex"){
     cart.style.display = "none";
     }
-    
     else {
-        cart.style.display = "block";
+        cart.style.display = "flex";
     }
 }
 
@@ -192,4 +210,4 @@ window.onscroll = function (e) {
 
 
 
-console.log('nothing to see here');
+console.log('🍋🍋');

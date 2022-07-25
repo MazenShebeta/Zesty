@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Zesty - Fresh Lemons</title>
+    <title>Zesty - Fresh Lemon Products</title>
 </head>
 <body>
 
@@ -41,13 +41,18 @@
 
         <section id="cartDiv">
           <h3>Cart Items</h3>
-          <ul id  ="items-list"></ul>
-          <button id="checkout" onclick="Checkout()">Checkout</button>
-           <div class="justify-content-end">
-            <span id="total">total:</span>
-            <span id="totalPrice"></span>
-            <button onclick="clearAll()">Clear Cart</button>
-           </div>
+          <div class="itemsDiv"><ul id="items-list"></ul></div>
+          <div class="cartButtons">
+            <div class="">
+                <span id="total">total:</span>
+                <span id="totalPrice"></span>
+            </div> 
+             
+            <div class="justify-content-end">
+                <button id="checkout" onclick="Checkout()" style="width: 20%;">Checkout</button>
+                <button onclick="clearAll()" style="width: 20%;">Clear Cart</button>
+            </div>
+          </div>
         </section>
 
     <section class="startSection d-flex" id="about">
@@ -59,8 +64,9 @@
             <h2 class="fw-bold">
                 When Life gives you lemons<br> make lemonade.
             </h2>
+            <br>
             <p>in Zesty we prepare the dishes with fresh and natural ingredients.<br>
-               is a dream come true for the people who love zesty food.</p>
+            Zesty is a dream come true for the people who love zesty food.</p>
         </div>
         <div class="startQuote description"></div>
     </section>
@@ -72,14 +78,14 @@
     </div>
     <section class="d-flex flex-row justify-content-around flex-wrap productSection">
 
-      <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/5e8f4ac1b87674000900ce3b/1:1/w_1920%2Cc_limit/BackyardCitrusCake_Lemon_HERO_031920_5530.jpg" class="card-img-top" alt="Lemon Cake">
+      <div class="card hover-shadow">
+        <img src="https://assets.epicurious.com/photos/5e8f4ac1b87674000900ce3b/1:1/w_1920%2Cc_limit/BackyardCitrusCake_Lemon_HERO_031920_5530.jpg" class="card-img-top" alt="Backyard Citrus Upside-Down Cake">
         <div class="card-body">
           <h5 class="card-title">Backyard Citrus Upside-Down Cake</h5>
           <div class="mt-5">
-            <span class="price" id="Backyard Citrus Upside-Down CakePrice">5</span> <span>per piece</span>
+            <span class="price" id="Backyard Citrus Upside-Down CakePrice">5</span><span>$ per piece</span>
             <br>
-            <button class="btn btn-secondary addButton">Add to Cart</button>
+            <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -89,9 +95,9 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Curd</h5>
           <div class="mt-5">
-          <span class="price " id="Lemon CurdPrice">7</span> <span>per piece</span>
+          <span class="price " id="Lemon CurdPrice">7</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -101,21 +107,21 @@
         <div class="card-body">
           <h5 class="card-title">Lemon-Pistachio Loaf</h5>
           <div class="mt-5">
-            <span class="price" id="Lemon-Pistachio LoafPrice">2</span> <span>per piece</span>
+            <span class="price" id="Lemon-Pistachio LoafPrice">2</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/58d2960d45d58f3111d7ad63/1:1/w_1920%2Cc_limit/Lemon-Curd-Tart-With-Olive-Oil-22032017.jpg" class="card-img-top" alt="Lemon Curd Tart  photo">
+        <img src="https://assets.epicurious.com/photos/58d2960d45d58f3111d7ad63/1:1/w_1920%2Cc_limit/Lemon-Curd-Tart-With-Olive-Oil-22032017.jpg" class="card-img-top" alt="Lemon Curd Tart photo">
         <div class="card-body">
           <h5 class="card-title">Lemon Curd Tart with Olive Oil</h5>
           <div class="mt-5">
-            <span class="price" id="StrawberryPrice">4</span> <span>per piece</span>
+            <span class="price" id="StrawberryPrice">4</span><span>$ per piece</span>
             <br>
-            <button class="btn btn-secondary addButton">Add to Cart</button>  
+            <button class="btn btn-success addButton">Add to Cart</button>  
           </div>
         </div>
       </div>
@@ -127,104 +133,103 @@
           <div class="mt-5">
             <span class="price" id="MangoPrice">12</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
       
       <div class="card" style="width:18rem;">
-        <img src="https://assets.epicurious.com/photos/62cc6dc71b975d4415f894f8/1:1/w_1920%2Cc_limit/LemonBars_RECIPE_070722_36934.jpg" class="card-img-top" alt="Apple Photo">
+        <img src="https://assets.epicurious.com/photos/62cc6dc71b975d4415f894f8/1:1/w_1920%2Cc_limit/LemonBars_RECIPE_070722_36934.jpg" class="card-img-top" alt="Lemon Bars Photo">
         <div class="card-body">
           <h5 class="card-title">Lemon Bars</h5>
           <div class="mt-5">
             <span class="price" id="Lemon BarsPrice">8</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/5cc772d48cd5d0757cc48ef4/1:1/w_1920%2Cc_limit/East-62nd-Street-Lemon-Cake-recipe-04252019.jpg" class="card-img-top" alt="Oranges Photo">
+        <img src="https://assets.epicurious.com/photos/5cc772d48cd5d0757cc48ef4/1:1/w_1920%2Cc_limit/East-62nd-Street-Lemon-Cake-recipe-04252019.jpg" class="card-img-top" alt="East 62nd Street Lemon Photo">
         <div class="card-body">
           <h5 class="card-title">East 62nd Street Lemon Cake</h5>
           <div class="mt-5">
-            <span class="price" id="East 62nd Street Lemon CakePrice">5</span> <span>per piece</span>
+            <span class="price" id="East 62nd Street Lemon CakePrice">5</span><span>$ per piece</span>
             <br>
-            <button class="btn btn-secondary addButton">Add to Cart</button>
+            <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
     
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/54b0362b766062b203449965/1:1/w_1920%2Cc_limit/51140700_lemon-honey-tart_1x1.jpg" class="card-img-top" alt="Sweet potatoes photo">
+        <img src="https://assets.epicurious.com/photos/54b0362b766062b203449965/1:1/w_1920%2Cc_limit/51140700_lemon-honey-tart_1x1.jpg" class="card-img-top" alt="Lemon-Honey Tart with Salted Shortbread Crust photo">
         <div class="card-body">
           <h5 class="card-title">Lemon-Honey Tart with Salted Shortbread Crust</h5>
           <div class="mt-5">
-          <span class="price " id="Lemon-Honey Tart with Salted Shortbread CrustPrice">7</span> <span>per piece</span>
+          <span class="price " id="Lemon-Honey Tart with Salted Shortbread CrustPrice">7</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/5cd324b9e5ddd11bcbf6b416/1:1/w_1920%2Cc_limit/Lemon-Loaf-With-Bay-and-Strawberry-recipe-18042019.jpg" class="card-img-top" alt="Onions photo">
+        <img src="https://assets.epicurious.com/photos/5cd324b9e5ddd11bcbf6b416/1:1/w_1920%2Cc_limit/Lemon-Loaf-With-Bay-and-Strawberry-recipe-18042019.jpg" class="card-img-top" alt="Herb-Infused Lemon-Strawberry Loaf photo">
         <div class="card-body">
           <h5 class="card-title">Herb-Infused Lemon-Strawberry Loaf</h5>
           <div class="mt-5">
-            <span class="price" id="Herb-Infused Lemon-Strawberry LoafPrice">2</span> <span>per piece</span>
+            <span class="price" id="Herb-Infused Lemon-Strawberry LoafPrice">2</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/5f9b1a9273b8942f80e287c1/1:1/w_1920%2Cc_limit/BA0320acid03_V1_test.jpg" class="card-img-top" alt="Watermelons photo">
+        <img src="https://assets.epicurious.com/photos/5f9b1a9273b8942f80e287c1/1:1/w_1920%2Cc_limit/BA0320acid03_V1_test.jpg" class="card-img-top" alt="Stuffed Cabbage With Lemony Rice and Sumac photo">
         <div class="card-body">
-          <h5 class="card-title">Stuffed Cabbage With Lemony Rice and Sumac
-          </h5>
+          <h5 class="card-title">Stuffed Cabbage With Lemony Rice and Sumac</h5>
           <div class="mt-5">
-            <span class="price" id="Stuffed Cabbage With Lemony Rice and SumacPrice">4</span> <span>per piece</span>
+            <span class="price" id="Stuffed Cabbage With Lemony Rice and SumacPrice">4</span><span>$ per piece</span>
             <br>
-            <button class="btn btn-secondary addButton">Add to Cart</button>  
+            <button class="btn btn-success addButton">Add to Cart</button>  
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/5ee22f883e31c2ad43060693/1:1/w_1920%2Cc_limit/lemony-yogurt-donuts-BA-061120.jpg" class="card-img-top" alt="Bananas Photo">
+        <img src="https://assets.epicurious.com/photos/5ee22f883e31c2ad43060693/1:1/w_1920%2Cc_limit/lemony-yogurt-donuts-BA-061120.jpg" class="card-img-top" alt="Lemony Glazed Yogurt Doughnuts Photo">
         <div class="card-body">
           <h5 class="card-title">Lemony Glazed Yogurt Doughnuts</h5>
           <div class="mt-5">
             <span class="price" id="Lemony Glazed Yogurt DoughnutsPrice">12</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
       
       <div class="card" style="width:18rem;">
-        <img src="https://assets.epicurious.com/photos/5eea5d07b62d7098f5bf6867/1:1/w_1920%2Cc_limit/icebox-lemon-pie-with-meringue-topping-recipe-061720.jpg" class="card-img-top" alt="Grapes Photo">
+        <img src="https://assets.epicurious.com/photos/5eea5d07b62d7098f5bf6867/1:1/w_1920%2Cc_limit/icebox-lemon-pie-with-meringue-topping-recipe-061720.jpg" class="card-img-top" alt="Icebox Lemon Pie With Meringue Photo">
         <div class="card-body">
           <h5 class="card-title">Icebox Lemon Pie With Meringue</h5>
           <div class="mt-5">
             <span class="price" id="Icebox Lemon Pie With MeringuePrice">8</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/57adefb95100bcdd6bd69603/1:1/w_1920%2Cc_limit/roasted-lemon-tomato-salad-081216.jpg" class="card-img-top" alt="Carrot Photo">
+        <img src="https://assets.epicurious.com/photos/57adefb95100bcdd6bd69603/1:1/w_1920%2Cc_limit/roasted-lemon-tomato-salad-081216.jpg" class="card-img-top" alt="Tomato, Onion, and Roasted Lemon Salad Photo">
         <div class="card-body">
-          <h5 class="card-title">Tomato, Onion, and Roasted Lemon Salad </h5>
+          <h5 class="card-title">Tomato, Onion, and Roasted Lemon Salad</h5>
           <div class="mt-5">
-            <span class="price" id="Tomato, Onion, and Roasted Lemon SaladPrice">5</span> <span>per item (250gm)</span>
+            <span class="price" id="Tomato, Onion, and Roasted Lemon SaladPrice">5</span><span>$ per item (250gm)</span>
             <br>
-            <button class="btn btn-secondary addButton">Add to Cart</button>
+            <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -234,9 +239,9 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Buttermilk Pie with Saffron</h5>
           <div class="mt-5">
-          <span class="price " id="Lemon Buttermilk Pie with SaffronPrice">7</span> <span>per piece</span>
+          <span class="price " id="Lemon Buttermilk Pie with SaffronPrice">7</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -246,68 +251,68 @@
         <div class="card-body">
           <h5 class="card-title">Lemons</h5>
           <div class="mt-5">
-            <span class="price" id="LemonsPrice">2</span> <span>per piece</span>
+            <span class="price" id="LemonsPrice">2</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/5b16fb0049152f0520850ebf/1:1/w_1920%2Cc_limit/spiked-ginger-mint-lemonade-cocktail-recipe-BA-060518.jpg" class="card-img-top" alt="Peaches photo">
+        <img src="https://assets.epicurious.com/photos/5b16fb0049152f0520850ebf/1:1/w_1920%2Cc_limit/spiked-ginger-mint-lemonade-cocktail-recipe-BA-060518.jpg" class="card-img-top" alt="Spiked Ginger-Mint Lemonade photo">
         <div class="card-body">
           <h5 class="card-title">Spiked Ginger-Mint Lemonade</h5>
           <div class="mt-5">
-            <span class="price" id="Spiked Ginger-Mint LemonadePrice">4</span> <span>per piece</span>
+            <span class="price" id="Spiked Ginger-Mint LemonadePrice">4</span><span>$ per piece</span>
             <br>
-            <button class="btn btn-secondary addButton">Add to Cart</button>  
+            <button class="btn btn-success addButton">Add to Cart</button>  
           </div>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="https://assets.epicurious.com/photos/59824aa18fa2e80d2014870d/1:1/w_1920%2Cc_limit/lemon-elderflower-tart-recipe-HC-080217.jpg" class="card-img-top" alt="Mushrooms Photo">
+        <img src="https://assets.epicurious.com/photos/59824aa18fa2e80d2014870d/1:1/w_1920%2Cc_limit/lemon-elderflower-tart-recipe-HC-080217.jpg" class="card-img-top" alt="Lemon and Elderflower Tart Photo">
         <div class="card-body">
           <h5 class="card-title">Lemon and Elderflower Tart</h5>
           <div class="mt-5">
             <span class="price" id="Lemon and Elderflower TartPrice">12</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
       
       <div class="card" style="width:18rem;">
-        <img src="https://assets.epicurious.com/photos/57053dd607eafc8038cf2447/1:1/w_1920%2Cc_limit/0416-BA-MOTT-01.jpg" class="card-img-top" alt="Apple Photo">
+        <img src="https://assets.epicurious.com/photos/57053dd607eafc8038cf2447/1:1/w_1920%2Cc_limit/0416-BA-MOTT-01.jpg" class="card-img-top" alt="Semolina-Lemon Syrup Cakes Photo">
         <div class="card-body">
-          <h5 class="card-title">Semolina–Lemon Syrup Cakes</h5>
+          <h5 class="card-title">Semolina-Lemon Syrup Cakes</h5>
           <div class="mt-5">
-            <span class="price" id="Semolina–Lemon Syrup CakesPrice">8</span><span>$ per piece</span>
+            <span class="price" id="Semolina-Lemon Syrup CakesPrice">8</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
       <div class="card" style="width:18rem;">
-        <img src="https://assets.epicurious.com/photos/57a38d5f437fcffe02f7246b/1:1/w_1920%2Cc_limit/Lemon-Blossom-Cupcakes-080416.jpg" class="card-img-top" alt="Apple Photo">
+        <img src="https://assets.epicurious.com/photos/57a38d5f437fcffe02f7246b/1:1/w_1920%2Cc_limit/Lemon-Blossom-Cupcakes-080416.jpg" class="card-img-top" alt="Lemon Blossom Cupcakes Photo">
         <div class="card-body">
           <h5 class="card-title">Lemon Blossom Cupcakes</h5>
           <div class="mt-5">
             <span class="price" id="Lemon Blossom CupcakesPrice">8</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
 
       <div class="card" style="width:18rem;">
-        <img src="https://assets.epicurious.com/photos/5d1121c4ed11c17924c217b8/1:1/w_1920%2Cc_limit/grilled-chicken-with-lemon-and-thyme-recipe-BA-060619.jpg" class="card-img-top" alt="Apple Photo">
+        <img src="https://assets.epicurious.com/photos/5d1121c4ed11c17924c217b8/1:1/w_1920%2Cc_limit/grilled-chicken-with-lemon-and-thyme-recipe-BA-060619.jpg" class="card-img-top" alt="Grilled Chicken With Lemon and Thyme Photo">
         <div class="card-body">
           <h5 class="card-title">Grilled Chicken With Lemon and Thyme</h5>
           <div class="mt-5">
             <span class="price" id="Grilled Chicken With Lemon and ThymePrice">8</span><span>$ per piece</span>
           <br>
-          <button class="btn btn-secondary addButton">Add to Cart</button>
+          <button class="btn btn-success addButton">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -317,7 +322,7 @@
 
       <!-- Remove the container if you want to extend the Footer to full width. -->
   <!-- Footer -->
-  <footer class="text-center text-white">
+  <footer class="text-center text-white" id="contact">
     <!-- Grid container -->
     <div class="container">
       <!-- Section: Links -->
@@ -387,22 +392,10 @@
 
       <!-- Section: Social -->
       <section class="text-center mb-5">
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mazen-shebeta-8993561b2/" class="text-white me-4">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="" class="text-white me-4">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/MazenShebeta" class="text-white me-4">
           <i class="fab fa-github"></i>
         </a>
       </section>
@@ -415,10 +408,7 @@
          class="text-center p-3"
          style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
-        >
+      © 2022 : Mazen Shebeta
     </div>
     <!-- Copyright -->
   </footer>
