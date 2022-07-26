@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
+ّ~
 
 body{
     background-color: #f5f5f6;
@@ -33,6 +34,10 @@ nav button{
     margin-right: auto;
 }
 
+.navbar-nav{
+    padding: 0 !important;
+}
+
 .active{
     text-decoration: underline;   
 }
@@ -59,7 +64,7 @@ nav button{
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
-  }
+}
 
 #main-lemon{
     height: 25em;
@@ -106,7 +111,7 @@ nav button{
 #cartDiv{
     
     z-index: 1;
-    width:25%;
+    width:35%;
     height:70%;
     background-color: white;
     border: 2px;
@@ -114,11 +119,12 @@ nav button{
     border-color: lightgray;
     border-radius: 2%;
     /* position:absolute; */
-    left:75%;
+    left:65%;
     z-index:100;
     display:none;
     position: fixed;
     flex-direction: column;
+    opacity: 97.5%;
 }
 
 #cartDiv h3{
@@ -161,6 +167,27 @@ nav button{
     height: 200px;
     overflow: hidden;
     object-fit: cover;
+}
+
+
+.about-us{
+    width: 100%;
+    height: 30em;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.about-us h2{
+    margin : 2% 5%;
+}
+
+.about-us img{
+    overflow: hidden;
+    position: relative;
+    align-self: center;
+    object-fit: cover;
+    height: 30em;
 }
 
 footer{

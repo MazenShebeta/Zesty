@@ -27,6 +27,8 @@ function addToCart(name, value, src) {
 
     item.style.display = "flex";
     item.style.flexDirection = "row";
+    item.style.width = "80%";
+    item.style.marginBottom = "2%";
 
     insideDiv.style.display = "flex";
     insideDiv.style.flexDirection = "column";
@@ -49,13 +51,13 @@ function addToCart(name, value, src) {
     var quantity = document.createElement("input");
     quantity.type = "number";
     quantity.min = "0";
-    quantity.step = "0.25";
-    quantity.value = "0.25";
+    quantity.step = "1";
+    quantity.value = "1";
     quantity.style.width = "75px";
     quantity.style.textAlign = "right";
     quantity.className = "quantity";
     kg = document.createElement("span");
-    kg.innerHTML = "kg";
+    kg.innerHTML = "piece";
 
     var price = document.createElement("span");
     price.className = "cartPrice";
@@ -81,6 +83,7 @@ function addToCart(name, value, src) {
     dataDiv.appendChild(remove);
     item.appendChild(dataDiv);
     cartList.appendChild(item);
+    
     item.style.flexDirection = "row";
     updatePrice(title.innerHTML);//update price based on quantity
     totalPrice();//update total price
@@ -97,7 +100,16 @@ function updatePrice(title){
             var price = parent.getElementsByClassName("cartPrice")[0];
             var priceName = title + "Price";
             var priceValue = document.getElementById(priceName).innerHTML;
-            price.innerHTML = quantity * priceValue * 4;
+            price.innerHTML = quantity * priceValue;
+            if(quantity == 0){
+                parent.parentNode.remove();
+            }
+            if(quantity >1){
+                parent.getElementsByClassName("kg")[0].innerHTML = "pieces";
+            }
+            else{
+                parent.getElementsByClassName("kg")[0].innerHTML = "piece";
+            }
             totalPrice();
         });
     }
@@ -179,32 +191,22 @@ function Checkout() {
 
 
 
-window.onscroll = function (e) {  
-    let about = document.getElementById("about");
-    let aboutNav = document.getElementById("about-item");
-    let products = document.getElementById("products");
-    let productsNav = document.getElementById("products-item");
-    let contact = document.getElementById("contact");
-    let contactNav = document.getElementById("contact-item");
-    if(contact.getBoundingClientRect())
-    {
-        contactNav.classList.add("active");
-        aboutNav.classList.remove("active");
-        productsNav.classList.remove("active");
-    }
-    else if(about.getBoundingClientRect())
-    {
-        aboutNav.classList.add("active");
-        contactNav.classList.remove("active");
-        productsNav.classList.remove("active");
-    }
-    else(products.getBoundingClientRect())
-    {
-        productsNav.classList.add("active");
-        aboutNav.classList.remove("active");
-        contactNav.classList.remove("active");
-    }
-}
+window.onscroll = () => {
+    var current = "";
+  
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= sectionTop ) {
+        current = section.getAttribute("id"); }
+    });
+  
+    navLi.forEach((li) => {
+      li.classList.remove("active");
+      if (li.href.includes(current)) {
+        li.classList.add("active");
+      }
+    });
+  };
     
 
 
