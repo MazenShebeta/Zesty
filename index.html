@@ -9,7 +9,6 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Zesty - Fresh Lemon Products</title>
 </head>
@@ -18,23 +17,24 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid d-flex">
             <a class="navbar-brand fw-bold" href="#" style="color: #4CAF50;"><i class="fa-solid fa-lemon"></i> Zesty</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-elements justify-content-center " id="navbarNav" style="margin: 0 auto;">
+            <div class="collapse navbar-collapse nav-elements justify-content-center navbarNav" id="navbarNav" style="margin: 0 auto;">
               <ul class="navbar-nav">
               <li class="nav-item">
-              <a class="nav-link active" id="about-item" href="#about">About</a>
+              <a class="nav-link active" id="about-item" href="#">About</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" id="products-item" href="#products">Products</a>
+                  <a class="nav-link active" id="products-item" href="#products">Products</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" id="contact-item" href="#contact">Contact</a>
+              <a class="nav-link active" id="contact-item" href="contactUs.html">Contact</a>
               </li>
               </ul>
             </div>
-            <button onclick="ShowCart()" class=""> <i class="fa-solid fa-cart-shopping"></i> </button>
+            <button onclick="ShowCart()" class="" id="shoppingButton"><i class="fa-solid fa-cart-shopping"></i></button>
+            <button onclick="changeTheme()" id="themeButton"><i class="fa-solid fa-moon"></i></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
         </div>
         </nav>
@@ -42,16 +42,16 @@
         <section id="cartDiv">
           <h3>Cart Items</h3>
           <hr>
-          <div class="itemsDiv"><ul id="items-list"></ul></div>
-          <div class="cartButtons">
+          <div class="itemsDiv"><div id="items-list"></div></div>
+          <div class="cartData">
             <div class="">
                 <span id="total">total:</span>
                 <span id="totalPrice"></span>
             </div> 
              
-            <div class="justify-content-end">
-                <button id="checkout" onclick="Checkout()" style="width: 20%;">Checkout</button>
-                <button onclick="clearAll()" style="width: 20%;">Clear Cart</button>
+            <div class="cartButtons">
+                <button id="checkout" class="btn btn-primary" onclick="Checkout()" >Checkout</button>
+                <button onclick="clearAll()" class="btn btn-danger">Clear Cart</button>
             </div>
           </div>
         </section>
@@ -84,7 +84,7 @@
         <div class="card-body">
           <h5 class="card-title">Backyard Citrus Upside-Down Cake</h5>
           <div class="mt-5">
-            <span class="price" id="Backyard Citrus Upside-Down CakePrice">5</span><span>$ per piece</span>
+            <span class="price" id="Backyard Citrus Upside-Down CakePrice">5</span><span>£ per piece</span>
             <br>
             <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -96,7 +96,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Curd</h5>
           <div class="mt-5">
-          <span class="price " id="Lemon CurdPrice">7</span><span>$ per piece</span>
+          <span class="price " id="Lemon CurdPrice">7</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -108,7 +108,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon-Pistachio Loaf</h5>
           <div class="mt-5">
-            <span class="price" id="Lemon-Pistachio LoafPrice">2</span><span>$ per piece</span>
+            <span class="price" id="Lemon-Pistachio LoafPrice">2</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -120,7 +120,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Curd Tart with Olive Oil</h5>
           <div class="mt-5">
-            <span class="price" id="StrawberryPrice">4</span><span>$ per piece</span>
+            <span class="price" id="StrawberryPrice">4</span><span>£ per piece</span>
             <br>
             <button class="btn btn-success addButton">Add to Cart</button>  
           </div>
@@ -132,7 +132,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Meringue Pie</h5>
           <div class="mt-5">
-            <span class="price" id="MangoPrice">12</span><span>$ per piece</span>
+            <span class="price" id="MangoPrice">12</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -144,7 +144,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Bars</h5>
           <div class="mt-5">
-            <span class="price" id="Lemon BarsPrice">8</span><span>$ per piece</span>
+            <span class="price" id="Lemon BarsPrice">8</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -156,7 +156,7 @@
         <div class="card-body">
           <h5 class="card-title">East 62nd Street Lemon Cake</h5>
           <div class="mt-5">
-            <span class="price" id="East 62nd Street Lemon CakePrice">5</span><span>$ per piece</span>
+            <span class="price" id="East 62nd Street Lemon CakePrice">5</span><span>£ per piece</span>
             <br>
             <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -168,7 +168,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon-Honey Tart with Salted Shortbread Crust</h5>
           <div class="mt-5">
-          <span class="price " id="Lemon-Honey Tart with Salted Shortbread CrustPrice">7</span><span>$ per piece</span>
+          <span class="price " id="Lemon-Honey Tart with Salted Shortbread CrustPrice">7</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -180,7 +180,7 @@
         <div class="card-body">
           <h5 class="card-title">Herb-Infused Lemon-Strawberry Loaf</h5>
           <div class="mt-5">
-            <span class="price" id="Herb-Infused Lemon-Strawberry LoafPrice">2</span><span>$ per piece</span>
+            <span class="price" id="Herb-Infused Lemon-Strawberry LoafPrice">2</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -192,7 +192,7 @@
         <div class="card-body">
           <h5 class="card-title">Stuffed Cabbage With Lemony Rice and Sumac</h5>
           <div class="mt-5">
-            <span class="price" id="Stuffed Cabbage With Lemony Rice and SumacPrice">4</span><span>$ per piece</span>
+            <span class="price" id="Stuffed Cabbage With Lemony Rice and SumacPrice">4</span><span>£ per piece</span>
             <br>
             <button class="btn btn-success addButton">Add to Cart</button>  
           </div>
@@ -204,7 +204,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemony Glazed Yogurt Doughnuts</h5>
           <div class="mt-5">
-            <span class="price" id="Lemony Glazed Yogurt DoughnutsPrice">12</span><span>$ per piece</span>
+            <span class="price" id="Lemony Glazed Yogurt DoughnutsPrice">12</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -216,7 +216,7 @@
         <div class="card-body">
           <h5 class="card-title">Icebox Lemon Pie With Meringue</h5>
           <div class="mt-5">
-            <span class="price" id="Icebox Lemon Pie With MeringuePrice">8</span><span>$ per piece</span>
+            <span class="price" id="Icebox Lemon Pie With MeringuePrice">8</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -228,7 +228,7 @@
         <div class="card-body">
           <h5 class="card-title">Tomato, Onion, and Roasted Lemon Salad</h5>
           <div class="mt-5">
-            <span class="price" id="Tomato, Onion, and Roasted Lemon SaladPrice">5</span><span>$ per item (250gm)</span>
+            <span class="price" id="Tomato, Onion, and Roasted Lemon SaladPrice">5</span><span>£ per item (250gm)</span>
             <br>
             <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -240,7 +240,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Buttermilk Pie with Saffron</h5>
           <div class="mt-5">
-          <span class="price " id="Lemon Buttermilk Pie with SaffronPrice">7</span><span>$ per piece</span>
+          <span class="price " id="Lemon Buttermilk Pie with SaffronPrice">7</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -253,7 +253,7 @@
         <div class="card-body">
           <h5 class="card-title">Spiked Ginger-Mint Lemonade</h5>
           <div class="mt-5">
-            <span class="price" id="Spiked Ginger-Mint LemonadePrice">4</span><span>$ per piece</span>
+            <span class="price" id="Spiked Ginger-Mint LemonadePrice">4</span><span>£ per piece</span>
             <br>
             <button class="btn btn-success addButton">Add to Cart</button>  
           </div>
@@ -265,7 +265,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon and Elderflower Tart</h5>
           <div class="mt-5">
-            <span class="price" id="Lemon and Elderflower TartPrice">12</span><span>$ per piece</span>
+            <span class="price" id="Lemon and Elderflower TartPrice">12</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -277,7 +277,7 @@
         <div class="card-body">
           <h5 class="card-title">Semolina-Lemon Syrup Cakes</h5>
           <div class="mt-5">
-            <span class="price" id="Semolina-Lemon Syrup CakesPrice">8</span><span>$ per piece</span>
+            <span class="price" id="Semolina-Lemon Syrup CakesPrice">8</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -288,7 +288,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemon Blossom Cupcakes</h5>
           <div class="mt-5">
-            <span class="price" id="Lemon Blossom CupcakesPrice">8</span><span>$ per piece</span>
+            <span class="price" id="Lemon Blossom CupcakesPrice">8</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -300,7 +300,7 @@
         <div class="card-body">
           <h5 class="card-title">Grilled Chicken With Lemon and Thyme</h5>
           <div class="mt-5">
-            <span class="price" id="Grilled Chicken With Lemon and ThymePrice">8</span><span>$ per piece</span>
+            <span class="price" id="Grilled Chicken With Lemon and ThymePrice">8</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -312,7 +312,7 @@
         <div class="card-body">
           <h5 class="card-title">Lemons</h5>
           <div class="mt-5">
-            <span class="price" id="LemonsPrice">2</span><span>$ per piece</span>
+            <span class="price" id="LemonsPrice">2</span><span>£ per piece</span>
           <br>
           <button class="btn btn-success addButton">Add to Cart</button>
           </div>
@@ -415,6 +415,7 @@
   </footer>
   <!-- Footer -->
 <!-- End of .container -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       <script src="/scripts/script.js"></script>
     </body>
 </html>

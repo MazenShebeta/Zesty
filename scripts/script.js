@@ -19,25 +19,23 @@ for (var i = 0; i < buttons.length; i++) {
 
 function addToCart(name, value, src) {
     // var cart = document.getElementById("cartDiv");
+    var sym = '£';
     var cartList = document.getElementById("items-list");
-    var item = document.createElement("li");
+    var item = document.createElement("div");
+    var imgDiv = document.createElement("div");
     var dataDiv = document.createElement("div");
     var insideDiv = document.createElement("div");
     var quantityPrice = document.createElement("div");
 
-    item.style.display = "flex";
-    item.style.flexDirection = "row";
-    item.style.width = "80%";
-    item.style.marginBottom = "2%";
+    insideDiv.setAttribute('class','insideDiv');
+    
+    imgDiv.className = "imgDiv";
 
-    insideDiv.style.display = "flex";
-    insideDiv.style.flexDirection = "column";
+    quantityPrice.setAttribute('class','quantityPrice');
+    
 
-    quantityPrice.style.display = "flex";
-    quantityPrice.style.flexDirection = "row";
+    dataDiv.setAttribute('class','dataDiv');
 
-    dataDiv.style.display = "flex";
-    dataDiv.style.flexDirection = "row";
 
     item.className = "item";
     
@@ -57,15 +55,16 @@ function addToCart(name, value, src) {
     quantity.style.textAlign = "right";
     quantity.className = "quantity";
     kg = document.createElement("span");
-    kg.innerHTML = "piece";
+    kg.innerHTML = "Piece";
 
     var price = document.createElement("span");
     price.className = "cartPrice";
     price.innerHTML = value;
+    price.style.margin = "auto";
 
     var remove = document.createElement("button");
     remove.innerHTML = '<i class="fa-solid fa-trash"></i>';
-    remove.className = "removeButton";
+    remove.className = "removeButton btn btn-danger";
     remove.style.alignSelf = "center";
     remove.onclick = function(event){
         var target = event.target;
@@ -73,18 +72,17 @@ function addToCart(name, value, src) {
         parent.remove();
         totalPrice();
     }
-    item.appendChild(img);
+    imgDiv.appendChild(img);
+    imgDiv.appendChild(remove);
     insideDiv.appendChild(title);
     quantityPrice.appendChild(quantity);
     quantityPrice.appendChild(kg);
+    quantityPrice.appendChild(price);
     insideDiv.appendChild(quantityPrice);
-    insideDiv.appendChild(price);
     dataDiv.appendChild(insideDiv);
-    dataDiv.appendChild(remove);
+    item.appendChild(imgDiv);
     item.appendChild(dataDiv);
     cartList.appendChild(item);
-    
-    item.style.flexDirection = "row";
     updatePrice(title.innerHTML);//update price based on quantity
     totalPrice();//update total price
 }
@@ -103,12 +101,6 @@ function updatePrice(title){
             price.innerHTML = quantity * priceValue;
             if(quantity == 0){
                 parent.parentNode.remove();
-            }
-            if(quantity >1){
-                parent.getElementsByClassName("kg")[0].innerHTML = "pieces";
-            }
-            else{
-                parent.getElementsByClassName("kg")[0].innerHTML = "piece";
             }
             totalPrice();
         });
@@ -147,7 +139,7 @@ function totalPrice() {
     var total = 0;
     for (var i = 0; i < items.length; i++) {
         var price = items[i].getElementsByClassName("cartPrice")[0].innerHTML;
-        total += parseFloat(price);
+        total += parseInt(price);
     }
     document.getElementById("totalPrice").innerHTML = total;
 }
@@ -183,33 +175,31 @@ function isDark(){
 function Checkout() {
     
     total = document.getElementById("totalPrice").innerHTML;
-    alert("You have paid : " + total + "£");
+    alert("You have paid : " + "£" + total + ", Bon Appetit!");
     clearAll();
 }
 
 
 
+function changeTheme(){
+    var body = document.getElementsByTagName("body")[0];
+    var nav = document.getElementsByTagName("nav")[0];
+    if(body.className == "dark"){
+        body.className = "";
+        nav.className = "navbar navbar-expand-lg navbar-light bg-light sticky-top";
+    }
+    else{
+        body.className = "dark";
+        nav.className = "navbar navbar-expand-lg navbar-dark bg-dark sticky-top";
 
+    }
+}
 
-window.onscroll = () => {
-    var current = "";
-  
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop ) {
-        current = section.getAttribute("id"); }
-    });
-  
-    navLi.forEach((li) => {
-      li.classList.remove("active");
-      if (li.href.includes(current)) {
-        li.classList.add("active");
-      }
-    });
-  };
-    
-
-
+if(window.innerWidth <= 600){
+    var map = document.getElementById('map');
+    map.innerHTML = "";
+    map.innerHTML = '<div class="mapouter"><div class="gmap_canvas"><iframe width="420" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=The%20GrEEK%20Campus,%20171%20Tahrir%20street,%20Ad%20Dawawin,%20Abdeen,%20Cairo%20Governorate%2011513&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:420px;}</style><a href="https://www.embedgooglemap.net">google maps on website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:420px;}</style></div></div>';
+}
 
 
 console.log('🍋🍋');
