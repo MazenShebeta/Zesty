@@ -27,14 +27,18 @@ function addToCart(name, value, src) {
     var insideDiv = document.createElement("div");
     var quantityPrice = document.createElement("div");
 
-    insideDiv.setAttribute('class','insideDiv');
+    insideDiv.className = 'insideDiv';
     
     imgDiv.className = "imgDiv";
 
-    quantityPrice.setAttribute('class','quantityPrice');
+    quantityPrice.className = 'quantityPrice';
+    var up = document.createElement("i");
+    up.className = "fas fa-arrow-up";
+    var down = document.createElement("i");
+    down.className = "fas fa-arrow-down";
     
 
-    dataDiv.setAttribute('class','dataDiv');
+    dataDiv.className = 'dataDiv';
 
 
     item.className = "item";
@@ -44,7 +48,7 @@ function addToCart(name, value, src) {
     img.className = "cartItemImg";
 
     var title = document.createElement("h5");
-    title.innerHTML = name;
+    title.innerHTML = name;    
 
     var quantity = document.createElement("input");
     quantity.type = "number";
